@@ -1,0 +1,20 @@
+<% include partials/header.html %>
+
+<header>
+  <h2>Enjoy Your Favorites.</h2>
+  <h1>Order Now</h1>
+</header>
+<main>
+  <ul>
+    <% categories.forEach(function(category){ %>
+    <li>
+      <figure>
+        <img src="<%= category.image %>" alt="<%= category.name %>">
+        <figcaption><%= category.name %>
+      </figure>
+    </li>
+    <% }) %>
+  </ul>
+</main>
+
+<% include partials/footer.html %>

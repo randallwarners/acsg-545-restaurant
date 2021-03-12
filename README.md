@@ -5,10 +5,18 @@ Install [Node.js](https://nodejs.org/en/) 14.15.4 LTS.
 
 Install packages:
 
-	npm install
+```
+npm install
+```
 
-Run local app server:
+Run local app server.
+The DEBUG environment variable is optional.
 
-	node app.js
+```
+# MacOS/Linux
+DEBUG=acsg-545-restaurant:* npm start
+# Windows
+set DEBUG=acsg-545-restaurant:* & npm start
+```
 
 Then, navigate to [localhost:8080](localhost:8080).

@@ -1,21 +1,27 @@
 <% include partials/header.html %>
 
-<header>
-  <h2>Enjoy your favorites.</h2>
-  <img src="images/logo-black.png" alt="Logo" width="60px">
-  <h1>Order Now</h1>
-</header>
-<main>
-  <ul>
-    <% categories.forEach(function(category){ %>
-    <li>
-      <figure>
-        <img src="<%= category.image %>" alt="<%= category.name %>" width="100px">
-        <figcaption><%= category.name %>
-      </figure>
-    </li>
-    <% }) %>
-  </ul>
-</main>
+<div class="index">
+  <header>
+    <h2>Enjoy your favorites.</h2>
+    <img src="images/logo-black.png" alt="Logo" width="60px">
+    <a href="#"><span class="link-white">Order Now</span></a>
+  </header>
+  <main class="container">
+    <ul class="row row-cols-3">
+      <% categories.forEach(function(category){ %>
+      <li class="col">
+        <a href="#">
+        <figure>
+          <img src="<%= category.image %>" alt="<%= category.name %>" height="150px">
+          <figcaption>
+            <span class="link-black"><%= category.name %></span>
+          </figcaption>
+        </figure>
+        </a>
+      </li>
+      <% }) %>
+    </ul>
+  </main>
+</div>
 
 <% include partials/footer.html %>

@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Almond Nougat';
+  src: url('fonts/almond_nougat.ttf');
+}
+
+body {
+  font-family: "Almond Nougat";
+}

@@ -1,7 +1,8 @@
 <% include partials/header.html %>
 
 <header>
-  <h2>Enjoy Your Favorites.</h2>
+  <h2>Enjoy your favorites.</h2>
+  <img src="images/logo-black.png" alt="Logo" width="60px">
   <h1>Order Now</h1>
 </header>
 <main>
@@ -9,7 +10,7 @@
     <% categories.forEach(function(category){ %>
     <li>
       <figure>
-        <img src="<%= category.image %>" alt="<%= category.name %>">
+        <img src="<%= category.image %>" alt="<%= category.name %>" width="100px">
         <figcaption><%= category.name %>
       </figure>
     </li>

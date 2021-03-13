@@ -12,18 +12,6 @@ a {
   text-decoration: none;
 }
 
-nav a {
-  color: black;
-  font-weight: bold;
-  margin-left: 10px;
-  margin-right: 10px;
-  text-transform: uppercase;
-}
-
-nav .link-black {
-  font-size: 0.7em;
-}
-
 .link-black {
   background-color: black;
   color: white;
@@ -43,6 +31,51 @@ nav .link-black {
 
 .link-round {
   border-radius: 25%;
+}
+
+/* header */
+nav a {
+  color: black;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+nav .link-black {
+  font-size: 0.7em;
+}
+
+/* footer */
+footer {
+  background-color: black;
+}
+
+footer,
+footer a {
+  color: white;
+}
+
+footer section {
+  font-size: 0.8em;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+footer section a {
+  text-transform: uppercase;
+}
+
+footer .legal {
+  font-size: 0.6em;
+}
+
+footer .legal > * {
+  margin: 5px;
+}
+
+footer .copyright {
+  margin-right: auto;
 }
 
 /* index styles */

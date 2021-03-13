@@ -1,10 +1,11 @@
 @font-face {
   font-family: 'Almond Nougat';
-  src: url('fonts/almond_nougat.ttf');
+  src: url('../fonts/almond_nougat.ttf');
 }
 
 body {
   font-family: "Almond Nougat";
+  font-size: 20pt;
 }
 
 a {
@@ -21,7 +22,6 @@ nav a {
 
 nav .link-black {
   font-size: 0.7em;
-  padding: 4px;
 }
 
 .link-black {
@@ -37,7 +37,7 @@ nav .link-black {
 .link-black,
 .link-white {
   font-weight: bold;
-  padding: 5px 10px 5px 10px;
+  padding: 0 10px 0 10px;
   text-transform: uppercase;
 }
 
@@ -62,9 +62,20 @@ nav .link-black {
 
 .index h2 {
   color: white;
+  font-size: 1.5em;
 }
 
 .index ul {
   list-style: none;
   margin: 25px;
+}
+
+.index figcaption {
+  text-align: center;
+}
+
+.index img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

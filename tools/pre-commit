@@ -1,0 +1,8 @@
+#!/bin/sh
+./node_modules/.bin/standard 1> /dev/null 2>&1
+
+if [ $? -ne 0 ]; then
+  printf "Commit failed to match style guide.\\n"
+  printf "Run ./node_modules/.bin/standard for more info.\\n"
+  exit 1
+fi

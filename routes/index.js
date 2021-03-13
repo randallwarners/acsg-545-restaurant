@@ -1,13 +1,13 @@
-var express = require('express');
-var router = express.Router();
-var db = require('../db');
+const express = require('express')
+const router = express.Router()
+const db = require('../db')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   res.render('index', {
     title: 'Group D Mexican Grill',
-    categories: db.categories,
-  });
-});
+    categories: db.categories
+  })
+})
 
-module.exports = router;
+module.exports = router

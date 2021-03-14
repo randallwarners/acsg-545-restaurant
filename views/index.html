@@ -10,7 +10,7 @@
     <ul class="row row-cols-3">
       <% categories.forEach(function(category){ %>
       <li class="col">
-        <a href="#">
+        <a href="menu">
         <figure>
           <img src="<%= category.image %>" alt="<%= category.name %>" height="150px">
           <figcaption>
@@ -23,5 +23,4 @@
     </ul>
   </main>
 </div>
-
 <% include partials/footer.html %>

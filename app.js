@@ -11,6 +11,7 @@ const contactRouter = require('./routes/contact')
 const missionRouter = require('./routes/mission')
 const rewardsRouter = require('./routes/rewards')
 const termsRouter = require('./routes/terms')
+const menuRouter = require('./routes/menu')
 
 const app = express()
 
@@ -33,6 +34,7 @@ app.use('/', contactRouter)
 app.use('/', missionRouter)
 app.use('/', rewardsRouter)
 app.use('/', termsRouter)
+app.use('/', menuRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

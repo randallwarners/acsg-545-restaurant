@@ -52,4 +52,16 @@ router.get('/contact', function (req, res, next) {
   })
 })
 
+router.get('/employee/login', function (req, res, next) {
+  res.render('employeeLogin', {
+    title: 'Group D Mexican Grill - Employee Login'
+  })
+})
+
+router.get('/customer/login', function (req, res, next) {
+  res.render('customerLogin', {
+    title: 'Group D Mexican Grill - Customer Login'
+  })
+})
+
 module.exports = router

@@ -3,6 +3,8 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
+const sqlite3 = require('sqlite3').verbose()
+const db = new sqlite3.Database('app.db')
 
 const indexRouter = require('./routes/index')
 
@@ -21,6 +23,9 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter)
+
+// database
+app.set('db', db)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

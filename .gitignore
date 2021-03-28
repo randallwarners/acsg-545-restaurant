@@ -1,3 +1,6 @@
+app.db
+.migrate
+
 # OSX
 .DS_Store
 

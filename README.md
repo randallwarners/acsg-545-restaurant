@@ -47,7 +47,7 @@ is used for versioning the database.
 To create a new migration, run
 
 ```
-./node_modules/.bin/migrate create
+./node_modules/.bin/migrate create --template-file ./migrations/template.js <name>
 ```
 
 The command creates a new file in ./migrations,

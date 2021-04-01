@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', indexRouter)
 
 // database
-app.set('db', db)
+app.set('db', db.exec('PRAGMA foreign_keys = 1;'))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

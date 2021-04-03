@@ -22,7 +22,9 @@
     "ejs": "~2.6.1",
     "express": "^4.17.1",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "migrate": "^1.7.0",
+    "morgan": "~1.9.1",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "standard": "^16.0.3"

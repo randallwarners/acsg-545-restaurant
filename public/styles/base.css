@@ -112,3 +112,21 @@ footer .copyright {
   margin-left: auto;
   margin-right: auto;
 }
+
+table{margin-left:auto;
+  margin-right:auto;
+  width: 90%;
+  border-spacing: 0;
+  background-color: white;
+}
+
+td, th{padding:10px;}
+
+tr:nth-of-type(even){
+  background-color: lightgrey;
+}
+
+.push {
+  height: 100px;
+}
+

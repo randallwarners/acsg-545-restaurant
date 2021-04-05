@@ -7,7 +7,7 @@ module.exports.description = ''
 
 module.exports.up = function (next) {
   db.serialize(function () {
-    db.run(`INSERT INTO menu (name, active) VALUES ('default', 1);`)
+    db.run(`INSERT INTO menu (name, active) VALUES ('default', 1)`)
 
     // base menu items
     db.run(`
@@ -114,46 +114,80 @@ module.exports.up = function (next) {
       ('base', 'one'),
       ('rice', 'one'),
       ('beans', 'one'),
-      ('extras', 'many')
+      ('salsa', 'any'),
+      ('extras', 'any')
     `)
 
-    //TODO: add item parts
-
-    /*
     db.run(`
-      INSERT INTO item_part (parent, child, category, price, default)
-      ('chicken', 'images/chicken.png', 7),
-      ('steak', 'images/steak.png', 8.35),
-      ('barbacoa', 'images/barbacoa.png', 8.35),
-      ('carnitas', 'images/carnitas.png', 7.5),
-      ('sofritas', 'images/sofritas.png', 7),
-      ('white rice', 'images/white_rice.png', 0),
-      ('brown rice', 'images/brown_rice.png', 0),
-      ('cauliflower rice', 'images/cauliflower_rice.png', 2),
-      ('black beans', 'images/black_beans.png', 0),
-      ('pinto beans', 'images/pinto_beans.png', 0),
-      ('guacamole', 'images/guacamole.png', 2),
-      ('fresh tomato salsa', 'images/tomato_salsa.png', 0),
-      ('roasted chili-corn salsa ', 'images/chili_corn_salsa.png', 0),
-      ('tomatillo green chili salsa', 'images/green_chili_salsa.png', 0),
-      ('sour cream', 'images/sour_cream.png', 0),
-      ('fajita veggies', 'images/fajita_veggies.png', 0),
-      ('cheese', 'images/cheese.png', 0),
-      ('romaine lettuce', 'images/romaine_lettuce.png', 0),
-      ('queso blanco', 'images/queso_blano.png', 1.25)
-    `)
-    */
-
-    db.run('SELECT 1;', next)
+      INSERT INTO item_part (parent, child, category, price, [default])
+      SELECT
+        parrent.id,
+        child.id,
+        cat.id,
+        CASE child.name
+          WHEN 'chicken' THEN 7
+          WHEN 'steak' THEN 8.35
+          WHEN 'barbacoa' THEN 8.35
+          WHEN 'carnitas' THEN 7.5
+          WHEN 'sofritas' THEN 7
+          WHEN 'cauliflower rice' THEN 2
+          WHEN 'guacamole' THEN 2
+          WHEN 'queso blanco' THEN 1.25
+          ELSE 0
+        END,
+        0
+      FROM item parrent
+      CROSS JOIN item child
+      CROSS JOIN category cat
+      WHERE parrent.[name] IN ('burrito', 'burrito bowl')
+      AND child.[name] NOT IN (
+        'taco',
+        'burrito',
+        'burrito bowl',
+        'guacamole',
+        'chips',
+        'chips and salsa',
+        'bottled water',
+        'fountain drink',
+        'mexican coca-cola'
+      )
+      AND (
+        child.name IN ('chicken', 'steak', 'barbacoa', 'carnitas', 'sofritas')
+        AND cat.name = 'base'
+        OR
+        child.name IN ('white rice', 'brown rice', 'cauliflower rice')
+        AND cat.name = 'rice'
+        OR
+        child.name IN ('black beans', 'pinto beans')
+        AND cat.name = 'beans'
+        OR
+        child.name IN (
+          'fresh tomato salsa',
+          'roasted chili-corn salsa',
+          'tomatillo green chili salsa'
+        )
+        AND cat.name = 'salsa'
+        OR
+        cat.name = 'extras'
+        AND child.name IN (
+          'guacamole',
+          'sour cream',
+          'fajita veggies',
+          'cheese',
+          'romaine lettuce',
+          'queso blanco'
+        )
+      )
+    `, next)
   })
 }
 
 module.exports.down = function (next) {
   db.serialize(function () {
-    db.run('DELETE FROM menu;')
-    db.run('DELETE FROM menu_item;')
-    db.run('DELETE FROM category;')
     db.run('DELETE FROM item_part;')
-    db.run('DELETE FROM item;', next)
+    db.run('DELETE FROM menu_item;')
+    db.run('DELETE FROM item;')
+    db.run('DELETE FROM category;')
+    db.run('DELETE FROM menu;', next)
   })
 }

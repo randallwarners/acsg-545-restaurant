@@ -10,19 +10,6 @@ module.exports.description = `
 
 module.exports.up = function (next) {
   db.serialize(function () {
-    db.run('DROP TABLE [order];')
-    db.run(`
-      CREATE TABLE [order] (
-        id INTEGER PRIMARY KEY,
-        user INTEGER,
-        time TEXT,
-        status TEXT,
-        tax REAL,
-        FOREIGN KEY (user)
-          REFERENCES user (id)
-      );
-    `)
-
     db.run('DROP TABLE order_item;')
     db.run(`
       CREATE TABLE order_item (
@@ -56,24 +43,6 @@ module.exports.up = function (next) {
       );
     `)
 
-    db.run('DROP TABLE item;')
-    db.run(`
-      CREATE TABLE item (
-        id INTEGER PRIMARY KEY,
-        name TEXT NOT NULL,
-        description TEXT,
-        image TEXT
-      );
-    `)
-
-    db.run(`
-      CREATE TABLE category (
-        id INTEGER PRIMARY KEY,
-        name TEXT NOT NULL,
-        type TEXT
-      );
-    `, next)
-
     db.run('DROP TABLE item_part;')
     db.run(`
       CREATE TABLE item_part (
@@ -92,11 +61,7 @@ module.exports.up = function (next) {
           REFERENCES category (id)
       );
     `, next)
-  })
-}
 
-module.exports.down = function (next) {
-  db.serialize(function () {
     db.run('DROP TABLE [order];')
     db.run(`
       CREATE TABLE [order] (
@@ -104,13 +69,34 @@ module.exports.down = function (next) {
         user INTEGER,
         time TEXT,
         status TEXT,
-        price REAL,
         tax REAL,
         FOREIGN KEY (user)
           REFERENCES user (id)
       );
     `)
 
+    db.run('DROP TABLE item;')
+    db.run(`
+      CREATE TABLE item (
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        description TEXT,
+        image TEXT
+      );
+    `)
+
+    db.run(`
+      CREATE TABLE category (
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        type TEXT
+      );
+    `, next)
+  })
+}
+
+module.exports.down = function (next) {
+  db.serialize(function () {
     db.run('DROP TABLE order_item;')
     db.run(`
       CREATE TABLE order_item (
@@ -138,6 +124,33 @@ module.exports.down = function (next) {
       );
     `)
 
+    db.run('DROP TABLE item_part;')
+    db.run(`
+      CREATE TABLE item_part (
+        parent INT,
+        child INT CHECK (parent <> child),
+        PRIMARY KEY (parent, child),
+        FOREIGN KEY (parent)
+          REFERENCES item (id),
+        FOREIGN KEY (child)
+          REFERENCES item (id)
+      );
+    `)
+
+    db.run('DROP TABLE [order];')
+    db.run(`
+      CREATE TABLE [order] (
+        id INTEGER PRIMARY KEY,
+        user INTEGER,
+        time TEXT,
+        status TEXT,
+        price REAL,
+        tax REAL,
+        FOREIGN KEY (user)
+          REFERENCES user (id)
+      );
+    `)
+
     db.run('DROP TABLE item;')
     db.run(`
       CREATE TABLE item (
@@ -149,19 +162,6 @@ module.exports.down = function (next) {
         [default] INTEGER,
         price REAL,
         active INTEGER DEFAULT 1
-      );
-    `)
-
-    db.run('DROP TABLE item_part;')
-    db.run(`
-      CREATE TABLE item_part (
-        parent INT,
-        child INT CHECK (parent <> child),
-        PRIMARY KEY (parent, child),
-        FOREIGN KEY (parent)
-          REFERENCES item (id),
-        FOREIGN KEY (child)
-          REFERENCES item (id)
       );
     `)
 

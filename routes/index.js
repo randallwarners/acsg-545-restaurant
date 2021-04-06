@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const db = require('../db')
+const MenuItemMapper = require('../models/menu_item_mapper.js')
 
 router.get('/', function (req, res, next) {
   res.render('index', {
@@ -9,10 +10,10 @@ router.get('/', function (req, res, next) {
   })
 })
 
-router.get('/menu', function (req, res, next) {
-  res.render('menu', {
+router.get('/order', function (req, res, next) {
+  res.render('order', {
     title: 'Group D Mexican Grill - Menu',
-    categories: db.categories
+    items: MenuItemMapper.GetActiveMenu()
   })
 })
 

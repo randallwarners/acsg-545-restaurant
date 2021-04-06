@@ -7,7 +7,9 @@ module.exports.description = ''
 
 module.exports.up = function (next) {
   db.serialize(function () {
-    db.run(`INSERT INTO menu (name, active) VALUES ('default', 1)`)
+    db.run(`
+      INSERT INTO menu (name, active) VALUES ('default', 1)
+    `)
 
     // base menu items
     db.run(`

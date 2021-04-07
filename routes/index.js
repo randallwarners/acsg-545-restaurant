@@ -17,6 +17,65 @@ router.get('/order', function (req, res, next) {
   })
 })
 
+
+
+
+
+
+router.get('/order/:orderId/item/:itemId', function (req, res, next) {
+  res.render('order', {
+    title: 'Group D Mexican Grill - Order'
+
+    // TODO: Implementation details
+    // return list of item parts for the item parameter
+  })
+})
+
+router.post('/order/:orderId/item/:itemId', function (req, res, next) {
+  res.render('order', {
+    title: 'Group D Mexican Grill - Order'
+
+    // TODO: Implementation details
+    // add item to current order in the database, redirect to /order
+  })
+})
+
+router.get('/order/:orderId/cart', function (req, res, next) {
+  res.render('order', {
+    title: 'Group D Mexican Grill - Cart'
+
+    // TODO: Implementation details
+    // return order with items
+  })
+})
+
+router.get('/order/:orderId/checkout', function (req, res, next) {
+  res.render('order', {
+    title: 'Group D Mexican Grill - Checkout'
+
+    // TODO: Implementation details
+    // return order with summarized items
+  })
+})
+
+router.post('/order/:orderId/item/checkout', function (req, res, next) {
+  res.render('order', {
+    title: 'Group D Mexican Grill - Order Status'
+
+    // TODO: Implementation details
+    // update order status
+  })
+})
+
+router.get('/order/:orderId/status', function (req, res, next) {
+  res.render('order', {
+    title: 'Group D Mexican Grill - Order'
+
+    // TODO: Implementation details
+    // return order status
+  })
+})
+
 router.get('/mission', function (req, res, next) {
   res.render('mission', {
     title: 'Group D Mexican Grill - Mission'

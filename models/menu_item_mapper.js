@@ -16,7 +16,7 @@ class MenuItemMapper {
       {
         id: 3,
         name: 'Burrito Bowls',
-        description:'Your choice of chicken, beef or fish served in a delicious bowl with rice, lettuce, fajita veggies and topped with guac, salsa, queso, sour cream or cheese.',
+        description: 'Your choice of chicken, beef or fish served in a delicious bowl with rice, lettuce, fajita veggies and topped with guac, salsa, queso, sour cream or cheese.',
         image: 'images/bowl.png'
       },
       {
@@ -32,7 +32,7 @@ class MenuItemMapper {
         image: 'images/side.png'
       },
       {
-        id: 6, 
+        id: 6,
         name: 'Chips & Salsa',
         description: 'Delicious Chips and Salsa',
         image: 'images/side.png'
@@ -44,13 +44,11 @@ class MenuItemMapper {
         image: 'images/drink.png'
       },
       {
-        id: 8, 
+        id: 8,
         name: 'Bottled Water',
         description: 'Refreshing water',
         image: 'images/drink.png'
       }
-        
-        
     ]
   }
 }

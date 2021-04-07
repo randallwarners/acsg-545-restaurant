@@ -17,11 +17,6 @@ router.get('/order', function (req, res, next) {
   })
 })
 
-
-
-
-
-
 router.get('/order/:orderId/item/:itemId', function (req, res, next) {
   res.render('order', {
     title: 'Group D Mexican Grill - Order'

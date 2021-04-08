@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const db = require('../db')
+const categories = require('../models/categories.js')
 const MenuItemMapper = require('../models/menu_item_mapper.js')
 
 router.get('/', function (req, res, next) {
   res.render('index', {
     title: 'Group D Mexican Grill',
-    categories: db.categories
+    categories: categories
   })
 })
 

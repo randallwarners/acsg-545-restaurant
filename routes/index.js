@@ -25,11 +25,9 @@ router.get('/menu', function (req, res, next) {
 })
 
 router.get('/order/:orderId/item/:itemId', function (req, res, next) {
-  res.render('order', {
-    title: 'Group D Mexican Grill - Order'
-
-    // TODO: Implementation details
-    // return list of item parts for the item parameter
+  res.render('orderItem', {
+    title: 'Group D Mexican Grill - Order',
+    item: MenuItemMapper.FindById(1)
   })
 })
 

@@ -1,6 +1,6 @@
 // database placeholder
 
-const categories = exports.categories = []
+const categories = module.exports = []
 
 categories.push({ name: 'Tacos', image: 'images/taco.png' })
 categories.push({ name: 'Burrito', image: 'images/burrito.png' })

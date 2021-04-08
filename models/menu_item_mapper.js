@@ -67,6 +67,106 @@ class MenuItemMapper {
       }
     ]
   }
+
+  static FindById (id) {
+    return {
+      id: 2,
+      name: 'Burrito',
+      description: 'Your choice of chicken, beef or fish wrapped in a warm flour, tortilla with rice, lettuce, fajita veggies and topped with guac, salsa, queso, sour cream or cheese.',
+      image: 'images/burrito.png',
+      category: 'entree',
+      price: 8,
+      parts: [
+        {
+          category: 'base',
+          type: 'one',
+          items: [
+            {
+              id: 10,
+              name: 'chicken',
+              description: '',
+              image: 'images/chicken.png',
+              price: 8
+            },
+            {
+              id: 11,
+              name: 'steak',
+              description: '',
+              image: 'images/steak.png',
+              price: 8.5
+            }
+          ]
+        },
+        {
+          category: 'rice',
+          type: 'one',
+          items: [
+            {
+              id: 15,
+              name: 'white rice',
+              description: '',
+              image: 'images/white_rice.png',
+              price: 0
+            },
+            {
+              id: 16,
+              name: 'brown rice',
+              description: '',
+              image: 'images/brown_rice.png',
+              price: 0
+            }
+          ]
+        },
+        {
+          category: 'beans',
+          type: 'one',
+          items: [
+            {
+              id: 15,
+              name: 'black beans',
+              description: '',
+              image: 'images/black_beans.png',
+              price: 0
+            },
+            {
+              id: 16,
+              name: 'pinto beans',
+              description: '',
+              image: 'images/pinto_beans.png',
+              price: 0
+            }
+          ]
+        },
+        {
+          category: 'extras',
+          type: 'any',
+          items: [
+            {
+              id: 15,
+              name: 'guacamole',
+              description: '',
+              image: 'images/guacamole.png',
+              price: 2
+            },
+            {
+              id: 16,
+              name: 'sour cream',
+              description: '',
+              image: 'images/sour_cream.png',
+              price: 0
+            },
+            {
+              id: 16,
+              name: 'fresh tomato salsa',
+              description: '',
+              image: 'images/tomato_salsa.png',
+              price: 0
+            }
+          ]
+        }
+      ]
+    }
+  }
 }
 
 module.exports = MenuItemMapper

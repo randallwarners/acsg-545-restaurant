@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const categories = require('../models/categories.js')
 const MenuItemMapper = require('../models/menu_item_mapper.js')
+const OrderMapper = require('../models/order_mapper.js')
 
 router.get('/', function (req, res, next) {
   res.render('index', {
@@ -32,20 +33,15 @@ router.get('/order/:orderId/item/:itemId', function (req, res, next) {
 })
 
 router.post('/order/:orderId/item/:itemId', function (req, res, next) {
-  res.render('order', {
-    title: 'Group D Mexican Grill - Order'
-
-    // TODO: Implementation details
-    // add item to current order in the database, redirect to /order
-  })
+  // TODO: Implementation details
+  // add item to current order in the database, redirect to /order
+  res.redirect('/cart')
 })
 
 router.get('/order/:orderId/cart', function (req, res, next) {
-  res.render('order', {
-    title: 'Group D Mexican Grill - Cart'
-
-    // TODO: Implementation details
-    // return order with items
+  res.render('cart', {
+    title: 'Group D Mexican Grill - Cart',
+    items: OrderMapper.FindById(1)
   })
 })
 

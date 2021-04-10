@@ -12,6 +12,30 @@ a {
   text-decoration: none;
 }
 
+header {
+  background-color: black;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+header > * {
+  display: block;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+header h2 {
+  color: white;
+  font-size: 1.5em;
+}
+
+ul {
+  list-style: none;
+  margin: 25px;
+}
+
 .link-black {
   background-color: black;
   color: white;
@@ -79,35 +103,12 @@ footer .copyright {
 }
 
 /* index styles */
-.index header {
-  background-color: black;
-  padding-bottom: 20px;
-  padding-top: 20px;
-}
-
-.index header > * {
-  display: block;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
-
-.index h2 {
-  color: white;
-  font-size: 1.5em;
-}
-
-.index ul {
-  list-style: none;
-  margin: 25px;
-}
-
 .index figcaption {
   text-align: center;
 }
 
-.index img {
+.index img,
+.order img {
   display: block;
   margin-left: auto;
   margin-right: auto;

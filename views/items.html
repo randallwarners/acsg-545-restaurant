@@ -1,17 +1,34 @@
   
 <% include partials/header.html %>
+<div class = index>
 <head>
   <title><%= title %></title>
-  
 </head>
+<header>
+  <h2>Choose Your Ingredients</h2>
+</header>
 <body>
-  <
-    <a
-    </a>
-    <div 
-    </div>
-    <a </a>
-    <a href="#">
-    </a>
-  </nav>
-  <% include partials/footer.html %>
+<h3>Choose one base(Chicken or Steak), one type of rice, one type of Beans and as many extras as you like. </h3>
+<table>
+<% items.forEach(function(item){ %>
+<tr><th></th>
+</tr>
+  
+  <tr>
+    <th><%= item.category%>: <span class="link-black"><%= item.name %></span></th>
+    <td><img src="<%= item.image %>" alt="<%= item.name %>" height="150px">
+    </td>
+    <th><input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."></th>
+  </tr>
+<% }) %>
+
+</table>
+<div class="col-md-12 text-center">
+  <a href="order">
+  <button type="button" class="btn btn-dark btn-lg btn-block">Done</button>
+  </a>
+</div>
+</body>
+</div>
+
+<% include partials/footer.html %>

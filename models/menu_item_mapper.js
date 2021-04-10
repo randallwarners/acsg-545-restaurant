@@ -167,6 +167,89 @@ class MenuItemMapper {
       ]
     }
   }
+
+  static getItems(){
+    return[
+            {
+              id: 10,
+              category: 'Base',
+              name: 'chicken',
+              description: '',
+              image: 'images/chicken.png',
+              price: 8
+            },
+            {
+              id: 11,
+              category: 'Base',
+              name: 'steak',
+              description: '',
+              image: 'images/steak.png',
+              price: 8.5
+
+        },
+
+            {
+              id: 15,
+              category: 'Rice',
+              name: 'white rice',
+              description: '',
+              image: 'images/whiteRice.png',
+              price: 0
+            },
+            {
+              id: 16,
+              category: 'Rice',
+              name: 'brown rice',
+              description: '',
+              image: 'images/brownRice.png',
+              price: 0
+
+        },
+
+            {
+              id: 15,
+              category: 'Beans',
+              name: 'black beans',
+              description: '',
+              image: 'images/blackBeans.png',
+              price: 0
+            },
+            {
+              id: 16,
+              category: 'Beans',
+              name: 'pinto beans',
+              description: '',
+              image: 'images/pintoBeans.png',
+              price: 0
+        },
+            {
+              id: 15,
+              category: 'Extras',
+              name: 'guacamole',
+              description: '',
+              image: 'images/guacamole.png',
+              price: 2
+            },
+            {
+              id: 16,
+              category: 'Extras',
+              name: 'sour cream',
+              description: '',
+              image: 'images/sourCream.png',
+              price: 0
+            },
+            {
+              id: 16,
+              category: 'Extras',
+              name: 'fresh tomato salsa',
+              description: '',
+              image: 'images/tomatoSalsa.png',
+              price: 0
+            }
+
+      ]
+    }
+
 }
 
 module.exports = MenuItemMapper

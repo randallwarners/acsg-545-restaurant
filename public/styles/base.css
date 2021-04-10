@@ -137,3 +137,6 @@ tr:nth-of-type(even){
   height: 100px;
 }
 
+.index h3 {
+  text-align: center;
+}

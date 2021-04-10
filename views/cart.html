@@ -1,18 +1,51 @@
 <% include partials/header.html %>
 
-<div class = index>
-    <header>
-        <h2>Cart</h2>
-    </header>
-    <main class="container">
-        <body>
-
-        <div class="col-md-12 text-center">
-            <button type="button" class="btn btn-primary btn-lg btn-block">Place Order</button>
-        </div>
-        </body>
-    </main>
-</div>
+<header>
+  <h2>My Cart</h2>
+</header>
+<main>
+  <table>
+    <tr>
+      <th>
+        Item
+      </th>
+      <th>
+        Price
+      </th>
+    </tr>
+    <% items.forEach(function(item){ %>
+    <tr>
+      <td>
+        <img src="<%= item.image %>" alt="<%= item.name %>" width="100px">
+        <%= item.name %>
+      </td>
+      <td>
+        <%= item.price %>
+      </td>
+    </tr>
+    <% }) %>
+    <tr>
+      <td>
+        Total
+      </td>
+      <td>
+        17.5
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="/order/1/item/1">
+          <button class="link-black">Add Item</button>
+        </a>
+      </td>
+    </tr>
+  </table>
+  <a href="/checkout">
+    <button type="button" class="link-white center">
+      Continue to Checkout
+    </button>
+  </a>
+</main>
 
 <% include partials/footer.html %>
 

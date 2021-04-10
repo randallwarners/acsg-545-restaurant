@@ -36,6 +36,12 @@ ul {
   margin: 25px;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .link-black {
   background-color: black;
   color: white;

@@ -6,7 +6,10 @@
     <main class="container">
         <body>
         <table>
-            <% items.forEach(function(menuItem){ %>
+            <% items.forEach(function(menuItem){
+            if( menuItem.category == "entree"){
+            %>
+
             <tr><th></th>
             </tr>
 
@@ -21,9 +24,33 @@
                 </td>
 
             </tr>
-            <% }) %>
+            <% }
+            else{%>
+            <tr><th></th>
+            </tr>
+
+            <tr>
+                <th><span class="link-black"><%= menuItem.name %></span>
+
+                    <span>$<%= menuItem.price %></span>
+                    <img src="<%= menuItem.image %>" alt="<%= menuItem.image %>" height="150px">
+
+                <td><button type="button" class="btn btn-dark btn-lg btn-block">Add Item</button>
+
+                </td>
+
+            </tr>
+
+
+            <% }
+            }) %>
 
         </table>
+        <div class="col-md-12 text-center">
+            <a href="/order/1/cart">
+                <button type="button" class="btn btn-dark btn-lg btn-block">Go to Cart</button>
+            </a>
+        </div>
         </body>
     </main>
 </div>

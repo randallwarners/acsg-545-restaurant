@@ -30,7 +30,7 @@ class MenuItemMapper {
         name: 'Side of Fresh Guacamole',
         description: 'Delicious Guacamole',
         image: 'images/side.png',
-        category: 'entree',
+        category: 'side',
         price: 2
       },
       {
@@ -38,7 +38,7 @@ class MenuItemMapper {
         name: 'Chips',
         description: 'Delicious Side Chips',
         image: 'images/side.png',
-        category: 'entree',
+        category: 'side',
         price: 1.5
       },
       {
@@ -46,7 +46,7 @@ class MenuItemMapper {
         name: 'Chips & Salsa',
         description: 'Delicious Chips and Salsa',
         image: 'images/side.png',
-        category: 'entree',
+        category: 'side',
         price: 2
       },
       {
@@ -54,7 +54,7 @@ class MenuItemMapper {
         name: 'Mexican Coca-Cola',
         description: 'Tasty soda to go with your meal',
         image: 'images/drink.png',
-        category: 'entree',
+        category: 'drink',
         price: 2
       },
       {
@@ -62,7 +62,7 @@ class MenuItemMapper {
         name: 'Bottled Water',
         description: 'Refreshing water',
         image: 'images/drink.png',
-        category: 'entree',
+        category: 'drink',
         price: 1.5
       }
     ]

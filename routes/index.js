@@ -28,7 +28,7 @@ router.get('/menu', function (req, res, next) {
 router.get('/items', function (req, res, next) {
   res.render('items', {
     title: 'Group D Mexican Grill - Items',
-    items: MenuItemMapper.getItems(),
+    items: MenuItemMapper.getItems()
   })
 })
 

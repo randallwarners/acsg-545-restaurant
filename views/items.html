@@ -12,8 +12,8 @@
 <table>
 <% items.forEach(function(item){ %>
 <tr><th></th>
-</tr>
 
+</tr>
   <tr>
     <th><%= item.category%>: <span class="link-black"><%= item.name %></span></th>
     <td><img src="<%= item.image %>" alt="<%= item.name %>" height="150px">
@@ -24,7 +24,7 @@
 
 </table>
 <div class="col-md-12 text-center">
-  <a href="order">
+  <a href="/order">
   <button type="button" class="btn btn-dark btn-lg btn-block">Done</button>
   </a>
 </div>

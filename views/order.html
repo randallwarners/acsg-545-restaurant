@@ -17,9 +17,9 @@
                 <th><span class="link-black"><%= menuItem.name %></span>
 
                         <span>$<%= menuItem.price %></span>
-                        <img src="<%= menuItem.image %>" alt="<%= menuItem.image %>" height="150px">
+                    <img src="<%= menuItem.image %>"  height="150px">
 
-                <td> <a href="items"><button type="button" class="btn btn-dark btn-lg btn-block">Add Item</button></a>
+                <td> <a href="order/1/item/<%= menuItem.id %>"><button type="button" value = "<%menuItem.id%>" class="btn btn-dark btn-lg btn-block">Add Item</button></a>
 
                 </td>
 
@@ -35,7 +35,7 @@
                     <span>$<%= menuItem.price %></span>
                     <img src="<%= menuItem.image %>" alt="<%= menuItem.image %>" height="150px">
 
-                <td><button type="button" class="btn btn-dark btn-lg btn-block">Add Item</button>
+                <td><button type="button" value = "<%menuItem.id%>" class="btn btn-dark btn-lg btn-block">Add Item</button>
 
                 </td>
 

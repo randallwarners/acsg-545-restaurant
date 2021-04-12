@@ -40,6 +40,12 @@ Install the git pre-commit hook for automatic checking before a commit:
 ln -s ../../tools/pre-commit .git/hooks/pre-commit
 ```
 
+## Assignment Submissions
+Go to the GitHub page, and click Code, Download Zip.
+Be sure the main branch is checked out.
+A zip file created manually from a local repo would include untracked files,
+so it's easiest to download directly from GitHub.
+
 ### Database
 [node-migrate](https://github.com/tj/node-migrate)
 is used for versioning the database.
